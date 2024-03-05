@@ -10,9 +10,6 @@ const SideBar = () => {
         <li>
           <Link to={`/bottom/5`}>Scroll to Bottom</Link>
         </li>
-        <li>
-          <Link to={`/`}>Third Example?</Link>
-        </li>
       </ul>
     </aside>
   );

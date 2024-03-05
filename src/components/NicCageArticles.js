@@ -5,8 +5,6 @@ import Article from './Article';
 import useWindowScroll from '../hooks/useWindowScroll';
 import { articleImgs } from '../constants/Constants';
 
-const buttonArr = new Array(articleImgs.length).fill("Button");
-
 function NicCageArticles() {
   // Call the custom hook to get articleRefs and scrollArticle function
   const [articleRefs, scrollArticle] = useWindowScroll();
@@ -21,11 +19,11 @@ function NicCageArticles() {
   return (
     <div className='article-container'>
       <nav>
-        {buttonArr.map((item, i) => {
+        {articleImgs.map((item, i) => {
           return(
             <NavButton 
               key={`button${i}`}
-              content={`${item} Index:${i}`}
+              content={item.title}
               handleClick={() => scrollArticle(i)}
             />
           )
@@ -39,7 +37,10 @@ function NicCageArticles() {
           return (
             <Article
               key={`article${i}`}
-              src={item}
+              src={item.src}
+              alt={item.alt}
+              title={item.title}
+              content={item.content}
               ref={el => articleRefs.current[i] = el}
             />
           )

@@ -22,7 +22,6 @@ aside {
   top: 0;
   left: 0;
   overflow-x: hidden;
-  /* flex: 25%; */
   width: 175px;
   height: 100vh;
   background-color: darkcyan;
@@ -31,6 +30,44 @@ aside {
 aside ul {
   list-style: none;
   text-align: left;
+  padding: 0;
+}
+
+aside li {
+  padding: 20px;
+}
+
+aside li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+aside a {
+  font-size: large;
+}
+
+aside a:link {
+  color: white;
+  text-decoration: none;
+}
+
+aside a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+aside a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+aside a:active {
+  color: white;
+  text-decoration: none;
+}
+
+aside li a:visited {
+  color: white;
+  text-decoration: none;
 }
 
 .article-container {
@@ -70,7 +107,7 @@ aside ul {
 }
 
 .articles img {
-  margin: 20px;
+  margin: 60px 0 15px 0;
 }
 
 .articles article {
