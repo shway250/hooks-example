@@ -6,13 +6,13 @@ const Article = forwardRef((props, ref) => {
 
   // grabbing some hipster ipsum for the article text
    useEffect(() => {
-    fetch("http://hipsum.co/api/?type=hipster-centric&paras=7")
+    fetch("http://hipsum.co/api/?type=hipster-centric&sentences=10")
       .then(res => res.json())
       .then(item => setText(item[0]));
   }, []);
 
   return(
-    <div>
+    <div className="articles">
       <img
         src={src}
         ref={ref}

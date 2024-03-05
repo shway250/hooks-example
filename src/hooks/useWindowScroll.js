@@ -2,20 +2,20 @@ import { useRef } from 'react';
 
 // Custom hook that provides a function to scroll to a specific element
 function useWindowScroll() {
-  const elemRef = useRef(null);
+  const elemRefs = useRef({});
 
-  // Function to focus the input element
-  const scrollToRef = () => {
-    if (elemRef.current) {
-      elemRef.current.scrollIntoView({
+  // Function to scroll to specified element or component
+  const scrollToRef = (key) => {
+    if (elemRefs.current[key]) {
+      elemRefs.current[key].scrollIntoView({
         behavior: 'smooth',
         inline: 'center',
       });
     }
   };
 
-  // Return the elemRef and the scrollToRef function
-  return [elemRef, scrollToRef];
+  // Return the elemRefs and the scrollToRef function
+  return [elemRefs, scrollToRef];
 }
 
 export default useWindowScroll;
